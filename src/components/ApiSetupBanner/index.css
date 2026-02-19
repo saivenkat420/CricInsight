@@ -1,0 +1,36 @@
+.api-setup-banner {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(118, 75, 162, 0.15));
+  border: 1px solid var(--color-secondary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.api-setup-content {
+  max-width: 600px;
+}
+
+.api-setup-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.api-setup-message {
+  font-size: var(--font-size-md);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+.api-setup-message code {
+  background: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+}
+
+.api-setup-link {
+  display: inline-block;
+}

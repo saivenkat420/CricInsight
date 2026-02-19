@@ -1,0 +1,189 @@
+.custom-select {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  position: relative;
+  min-width: 140px;
+  width: auto;
+}
+
+.custom-select__label {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ── Trigger button ─────────────────────────────────── */
+
+.custom-select__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding: 10px var(--space-md);
+  background: var(--bg-input);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  min-height: 40px;
+  width: 100%;
+  text-align: left;
+}
+
+.custom-select__trigger:hover {
+  border-color: var(--color-primary);
+  background: var(--bg-secondary);
+}
+
+.custom-select--open .custom-select__trigger {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+.custom-select__trigger:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
+.custom-select__value {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.custom-select__arrow {
+  display: flex;
+  align-items: center;
+  color: var(--text-tertiary);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.custom-select__arrow--up {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown panel ─────────────────────────────────── */
+
+.custom-select__dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: var(--z-dropdown);
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  max-height: 260px;
+  overflow-y: auto;
+  padding: var(--space-xs) 0;
+  list-style: none;
+  animation: selectDropIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top center;
+}
+
+@keyframes selectDropIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.92) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1) translateY(0);
+  }
+}
+
+.custom-select__dropdown::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-select__dropdown::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 3px;
+}
+
+/* ── Option items ───────────────────────────────────── */
+
+.custom-select__option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+  border-radius: 0;
+}
+
+.custom-select__option:first-child {
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.custom-select__option:last-child {
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+.custom-select__option--focused,
+.custom-select__option:hover {
+  background: rgba(34, 197, 94, 0.08);
+  color: var(--text-primary);
+}
+
+.custom-select__option--selected {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.custom-select__option--selected.custom-select__option--focused,
+.custom-select__option--selected:hover {
+  background: rgba(34, 197, 94, 0.12);
+}
+
+.custom-select__option-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.custom-select__check {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+  margin-left: var(--space-sm);
+  animation: checkPop 0.2s ease;
+}
+
+@keyframes checkPop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .custom-select {
+    width: 100%;
+  }
+
+  .custom-select__dropdown {
+    max-height: 200px;
+  }
+}

@@ -1,0 +1,75 @@
+.momentum-sparkline {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.sparkline-legend {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+  justify-content: center;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.sparkline-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 80px;
+  padding: 0 var(--space-xs);
+}
+
+.sparkline-bar {
+  position: relative;
+  border-radius: 2px 2px 0 0;
+  min-width: 4px;
+  transition: opacity var(--transition-fast);
+  opacity: 0.85;
+  cursor: default;
+}
+
+.sparkline-bar:hover {
+  opacity: 1;
+}
+
+.sparkline-bar.has-wicket {
+  opacity: 1;
+}
+
+.wicket-marker {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-error);
+  line-height: 1;
+}
+
+.sparkline-axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-xs);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}

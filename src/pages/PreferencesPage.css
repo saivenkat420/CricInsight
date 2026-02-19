@@ -1,0 +1,131 @@
+.preferences-page .page-subtitle {
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.pref-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.pref-section-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-md);
+}
+
+.pref-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.pref-card--empty {
+  text-align: center;
+  color: var(--text-tertiary);
+}
+
+.pref-card--empty p {
+  margin-bottom: var(--space-md);
+}
+
+.pref-toggle-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+.pref-toggle-row:last-child {
+  border-bottom: none;
+}
+
+.pref-toggle-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.pref-toggle-label {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+
+.pref-toggle-desc {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+}
+
+.pref-checkbox {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Favorites list */
+.favorites-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.favorite-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.favorite-item:last-child {
+  border-bottom: none;
+}
+
+.favorite-id {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  font-family: monospace;
+}
+
+.favorite-remove {
+  font-size: var(--font-size-xs);
+  color: var(--color-error);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-fast);
+}
+
+.favorite-remove:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* Data actions */
+.data-actions {
+  display: flex;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.data-clear-btn {
+  color: var(--color-error) !important;
+}
+
+.export-msg {
+  margin-top: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-success);
+}
+
+@media (max-width: 640px) {
+  .data-actions {
+    flex-direction: column;
+  }
+}

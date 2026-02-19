@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "engines": {
-    "node": "^10.13 || 12 || 14 || 15",
-    "npm": ">=6"
+    "node": ">=18",
+    "npm": ">=8"
   },
   "dependencies": {
     "@testing-library/jest-dom": "5.11.9",
@@ -19,6 +19,7 @@
     "react-router-dom": "5.2.0"
   },
   "devDependencies": {
+    "cross-env": "7.0.3",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-prettier": "3.3.1",
@@ -29,8 +30,10 @@
     "react-scripts": "4.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "dev:full": "vercel dev",
+    "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider DISABLE_ESLINT_PLUGIN=true react-scripts start",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint .",
     "lint:fix": "eslint --fix src/",

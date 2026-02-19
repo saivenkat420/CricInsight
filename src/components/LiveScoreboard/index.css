@@ -1,0 +1,209 @@
+.live-scoreboard-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--space-md);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.live-scoreboard {
+  background: var(--gradient-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.scoreboard-close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.scoreboard-close:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.scoreboard-status {
+  margin-bottom: var(--space-md);
+}
+
+.scoreboard-matchup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+}
+
+.matchup-team {
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.matchup-vs {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+}
+
+.scoreboard-main {
+  margin-bottom: var(--space-xl);
+}
+
+.batting-team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.batting-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.batting-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+}
+
+.main-score {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.score-runs {
+  color: var(--color-primary);
+}
+
+.score-wickets {
+  color: var(--text-secondary);
+}
+
+.score-overs {
+  font-size: var(--font-size-lg);
+  color: var(--text-tertiary);
+}
+
+.scoreboard-stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.stat-label {
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+.scoreboard-venue {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-xl);
+}
+
+.scoreboard-scores {
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.score-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+}
+
+.score-row:first-child {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.score-team {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.score-team-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.score-value {
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 480px) {
+  .live-scoreboard {
+    padding: var(--space-lg);
+  }
+
+  .main-score {
+    font-size: var(--font-size-3xl);
+  }
+}

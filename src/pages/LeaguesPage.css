@@ -1,0 +1,116 @@
+.leagues-page .page-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.leagues-grid-large {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.league-card-large {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--transition-normal);
+}
+
+.league-card-large:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
+}
+
+.league-card-skeleton {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.league-card-icon {
+  font-size: 4rem;
+  margin-bottom: var(--space-md);
+}
+
+.league-card-name {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.league-card-country {
+  font-size: var(--font-size-md);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-md);
+}
+
+.league-card-meta {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+.league-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.league-badge.live {
+  background: rgba(255, 71, 87, 0.15);
+  color: var(--live-indicator);
+}
+
+.league-badge.historical {
+  background: rgba(108, 92, 231, 0.15);
+  color: var(--color-secondary);
+}
+
+.leagues-info {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+}
+
+.leagues-info h2 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-lg);
+}
+
+.info-item h3 {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-sm);
+}
+
+.info-item p {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .leagues-grid-large {
+    grid-template-columns: 1fr;
+  }
+}

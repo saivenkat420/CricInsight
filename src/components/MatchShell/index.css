@@ -1,0 +1,111 @@
+.match-shell {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.shell-hero {
+  background: var(--gradient-card);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+}
+
+.shell-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.shell-league {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.shell-status {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+.shell-status--live { background: rgba(239, 68, 68, 0.15); color: var(--live-indicator); }
+.shell-status--completed { background: rgba(34, 197, 94, 0.15); color: var(--color-success); }
+.shell-status--upcoming { background: rgba(251, 191, 36, 0.15); color: var(--color-warning); }
+
+.shell-teams {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-xl);
+}
+
+.shell-team { flex: 1; max-width: 250px; }
+
+.shell-team-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: var(--space-md);
+}
+
+.shell-team-name {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-sm);
+}
+
+.shell-team-score {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.shell-vs {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  padding: var(--space-md);
+}
+
+.shell-result {
+  background: var(--bg-tertiary);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  display: inline-block;
+  margin-bottom: var(--space-md);
+}
+
+.shell-mom {
+  font-size: var(--font-size-sm);
+  color: var(--color-accent);
+  margin-top: var(--space-sm);
+}
+
+.shell-chips {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+  margin-top: var(--space-md);
+}
+
+.shell-actions {
+  margin-top: var(--space-lg);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .shell-hero { padding: var(--space-lg); }
+  .shell-teams { flex-direction: column; gap: var(--space-lg); }
+  .shell-vs { padding: var(--space-sm); }
+}

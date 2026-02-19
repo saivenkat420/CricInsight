@@ -1,0 +1,17 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "build",
+  "framework": "create-react-app",
+  "devCommand": "npm run start",
+  "rewrites": [
+    {"source": "/", "destination": "/index.html"},
+    {"source": "/leagues", "destination": "/index.html"},
+    {"source": "/leagues/:path*", "destination": "/index.html"},
+    {"source": "/live", "destination": "/index.html"},
+    {"source": "/matches", "destination": "/index.html"},
+    {"source": "/matches/:path*", "destination": "/index.html"},
+    {"source": "/teams/:path*", "destination": "/index.html"},
+    {"source": "/standings", "destination": "/index.html"},
+    {"source": "/search", "destination": "/index.html"}
+  ]
+}
