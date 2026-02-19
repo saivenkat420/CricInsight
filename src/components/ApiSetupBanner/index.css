@@ -1,5 +1,9 @@
 .api-setup-banner {
-  background: linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(118, 75, 162, 0.15));
+  background: linear-gradient(
+    135deg,
+    rgba(108, 92, 231, 0.15),
+    rgba(118, 75, 162, 0.15)
+  );
   border: 1px solid var(--color-secondary);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);

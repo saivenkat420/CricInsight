@@ -31,7 +31,9 @@
   transition: opacity var(--transition-fast);
 }
 
-.search-submit:hover { opacity: 0.9; }
+.search-submit:hover {
+  opacity: 0.9;
+}
 
 .intent-chips {
   display: flex;

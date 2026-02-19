@@ -6,8 +6,7 @@
   border: 1.5px solid var(--border-color);
   text-decoration: none;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.3s ease;
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
   position: relative;
   overflow: hidden;
 }
@@ -26,7 +25,8 @@
 
 .match-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(34, 197, 94, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15),
+    0 4px 10px rgba(34, 197, 94, 0.08);
   border-color: rgba(34, 197, 94, 0.4);
 }
 
@@ -109,7 +109,8 @@
 }
 
 @keyframes livePulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4);
   }
@@ -217,8 +218,13 @@
 
 /* ── Compact mode ─────────────────────────────────────── */
 
-.match-card--compact .match-card-header { margin-bottom: var(--space-sm); }
-.match-card--compact .team-logo { width: 28px; height: 28px; }
+.match-card--compact .match-card-header {
+  margin-bottom: var(--space-sm);
+}
+.match-card--compact .team-logo {
+  width: 28px;
+  height: 28px;
+}
 
 .match-date-compact {
   font-size: var(--font-size-xs);

@@ -8,6 +8,8 @@
 
 # production
 /build
+/docs
+/src/__tests__
 
 # misc
 .DS_Store

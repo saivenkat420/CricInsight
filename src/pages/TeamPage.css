@@ -12,7 +12,11 @@
   margin-bottom: var(--space-xl);
 }
 
-.team-hero-logo { width: 120px; height: 120px; object-fit: contain; }
+.team-hero-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
 
 .team-hero-placeholder {
   width: 120px;
@@ -27,7 +31,9 @@
   color: var(--color-primary);
 }
 
-.team-hero-info { flex: 1; }
+.team-hero-info {
+  flex: 1;
+}
 
 .team-hero-name {
   font-size: var(--font-size-2xl);
@@ -42,7 +48,10 @@
   margin-bottom: var(--space-md);
 }
 
-.team-hero-actions { display: flex; gap: var(--space-md); }
+.team-hero-actions {
+  display: flex;
+  gap: var(--space-md);
+}
 
 .favorite-btn {
   padding: var(--space-sm) var(--space-md);
@@ -54,7 +63,9 @@
   transition: all var(--transition-fast);
 }
 
-.favorite-btn:hover { background: var(--bg-card-hover); }
+.favorite-btn:hover {
+  background: var(--bg-card-hover);
+}
 
 .favorite-btn.active {
   background: rgba(253, 121, 168, 0.15);
@@ -62,7 +73,9 @@
   color: var(--color-accent);
 }
 
-.team-form { text-align: center; }
+.team-form {
+  text-align: center;
+}
 
 .form-label {
   display: block;
@@ -72,7 +85,10 @@
   margin-bottom: var(--space-sm);
 }
 
-.form-guide { display: flex; gap: var(--space-xs); }
+.form-guide {
+  display: flex;
+  gap: var(--space-xs);
+}
 
 .form-badge {
   width: 28px;
@@ -85,8 +101,14 @@
   font-weight: var(--font-weight-bold);
 }
 
-.form-badge.win { background: rgba(0, 212, 170, 0.2); color: var(--win-color); }
-.form-badge.loss { background: rgba(255, 107, 107, 0.2); color: var(--loss-color); }
+.form-badge.win {
+  background: rgba(0, 212, 170, 0.2);
+  color: var(--win-color);
+}
+.form-badge.loss {
+  background: rgba(255, 107, 107, 0.2);
+  color: var(--loss-color);
+}
 
 /* Season selector bar */
 .season-selector-bar {
@@ -127,8 +149,12 @@
   text-align: center;
 }
 
-.archive-stat--win { border-top: 3px solid var(--color-success); }
-.archive-stat--loss { border-top: 3px solid var(--color-error); }
+.archive-stat--win {
+  border-top: 3px solid var(--color-success);
+}
+.archive-stat--loss {
+  border-top: 3px solid var(--color-error);
+}
 
 .archive-stat-value {
   display: block;
@@ -166,7 +192,9 @@
   white-space: nowrap;
 }
 
-.team-page .tab-btn:hover { color: var(--text-primary); }
+.team-page .tab-btn:hover {
+  color: var(--text-primary);
+}
 
 .team-page .tab-btn.active {
   color: var(--color-primary);
@@ -226,8 +254,12 @@
   text-align: center;
 }
 
-.h2h-stat-block--win { border-top: 3px solid var(--color-success); }
-.h2h-stat-block--loss { border-top: 3px solid var(--color-error); }
+.h2h-stat-block--win {
+  border-top: 3px solid var(--color-success);
+}
+.h2h-stat-block--loss {
+  border-top: 3px solid var(--color-error);
+}
 
 .h2h-big-num {
   display: block;
@@ -457,20 +489,56 @@
   font-weight: var(--font-weight-bold);
 }
 
-.player-info { display: flex; flex-direction: column; }
-.player-name { font-weight: var(--font-weight-medium); color: var(--text-primary); }
-.player-role { font-size: var(--font-size-sm); color: var(--text-tertiary); }
+.player-info {
+  display: flex;
+  flex-direction: column;
+}
+.player-name {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+}
+.player-role {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+}
 
 @media (max-width: 768px) {
-  .team-hero { flex-direction: column; text-align: center; }
-  .team-form { margin-top: var(--space-md); }
-  .form-guide { justify-content: center; }
-  .archive-stats-strip { flex-wrap: wrap; }
-  .archive-stat { min-width: calc(50% - var(--space-md)); }
-  .h2h-summary-row { flex-direction: column; }
-  .rivalry-tab .rivalry-selector { flex-direction: column; align-items: stretch; }
-  .top-performers-section { grid-template-columns: 1fr; }
-  .rivalry-comparison-card { flex-direction: column; }
-  .rivalry-center { border-left: none; border-right: none; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-  .season-selector-bar { position: static; }
+  .team-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .team-form {
+    margin-top: var(--space-md);
+  }
+  .form-guide {
+    justify-content: center;
+  }
+  .archive-stats-strip {
+    flex-wrap: wrap;
+  }
+  .archive-stat {
+    min-width: calc(50% - var(--space-md));
+  }
+  .h2h-summary-row {
+    flex-direction: column;
+  }
+  .rivalry-tab .rivalry-selector {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .top-performers-section {
+    grid-template-columns: 1fr;
+  }
+  .rivalry-comparison-card {
+    flex-direction: column;
+  }
+  .rivalry-center {
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .season-selector-bar {
+    position: static;
+  }
 }
