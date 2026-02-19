@@ -29,7 +29,7 @@ function Header() {
       <div className="header-container">
         <Link to="/" className="header-logo">
           <span className="logo-icon">🏏</span>
-          <span className="logo-text">Cricket Live</span>
+          <span className="logo-text">CricInsight</span>
         </Link>
 
         <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
