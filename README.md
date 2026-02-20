@@ -1,4 +1,4 @@
-# Cricket Live - Scores & Stats
+# CricInsight – Scores & Stats
 
 An immersive cricket dashboard for live scores, rich match details, and league standings across T20 competitions. Uses the Sportmonks Cricket API (free tier) for BBL, T20I, and CSA T20 leagues.
 

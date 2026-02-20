@@ -598,15 +598,15 @@
   }
 
   .st-dot {
-    width: 16px;
-    height: 16px;
-    font-size: 0.5rem;
+    width: 20px;
+    height: 20px;
+    font-size: 0.55rem;
   }
 
   .expand-btn {
-    width: 22px;
-    height: 22px;
-    font-size: 0.95rem;
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
   }
 
   .st-detail-inner {
@@ -629,8 +629,8 @@
 
   .st-header,
   .st-row {
-    grid-template-columns: 150px repeat(5, 1fr);
-    min-width: 420px;
+    grid-template-columns: 130px repeat(5, 1fr);
+    min-width: 380px;
   }
 
   /* Hide NR, Form, Left */

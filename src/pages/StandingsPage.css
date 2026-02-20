@@ -128,4 +128,20 @@
     margin-left: 0;
     justify-content: flex-start;
   }
+
+  .filter-chip {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .standings-legend {
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .legend-item {
+    font-size: var(--font-size-xs);
+  }
 }

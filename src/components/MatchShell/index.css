@@ -120,11 +120,39 @@
   .shell-hero {
     padding: var(--space-lg);
   }
+
   .shell-teams {
     flex-direction: column;
-    gap: var(--space-lg);
+    gap: var(--space-md);
   }
+
   .shell-vs {
-    padding: var(--space-sm);
+    padding: var(--space-xs);
+  }
+
+  .shell-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .shell-team-name {
+    font-size: var(--font-size-md);
+  }
+
+  .shell-score {
+    font-size: var(--font-size-xl);
+  }
+
+  .shell-actions {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .shell-actions .btn {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

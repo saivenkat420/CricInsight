@@ -111,3 +111,32 @@
   color: var(--text-tertiary);
   font-size: var(--font-size-sm);
 }
+
+@media (max-width: 768px) {
+  .command-palette-overlay {
+    padding-top: var(--space-lg);
+    align-items: flex-start;
+  }
+
+  .command-palette {
+    width: 95%;
+    max-width: none;
+  }
+
+  .cp-results {
+    max-height: 50vh;
+  }
+
+  .cp-result {
+    padding: 12px var(--space-md);
+    min-height: 44px;
+  }
+
+  .cp-shortcut {
+    display: none;
+  }
+
+  .cp-input {
+    font-size: 16px;
+  }
+}

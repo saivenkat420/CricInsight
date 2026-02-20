@@ -230,16 +230,36 @@
   font-family: inherit;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .search-page .search-form-large {
     flex-direction: column;
+  }
+
+  .search-input-large {
+    font-size: 16px;
+  }
+
+  .search-submit {
+    min-height: 44px;
   }
 
   .results-grid {
     grid-template-columns: 1fr;
   }
 
+  .team-results-grid {
+    grid-template-columns: 1fr;
+  }
+
   .intent-chips {
     flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .intent-chip {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: var(--space-sm) var(--space-md);
   }
 }

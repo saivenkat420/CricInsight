@@ -145,7 +145,7 @@ function HomePage() {
                     {team.logo && (
                       <img
                         src={team.logo}
-                        alt=""
+                        alt={team.name || 'Team logo'}
                         className="continue-card-logo"
                       />
                     )}
@@ -168,7 +168,11 @@ function HomePage() {
             {followSuggestions.map(t => (
               <div key={t.id} className="follow-suggestion-card">
                 {t.logo && (
-                  <img src={t.logo} alt="" className="follow-suggestion-logo" />
+                  <img
+                    src={t.logo}
+                    alt={t.name || 'Team logo'}
+                    className="follow-suggestion-logo"
+                  />
                 )}
                 <span className="follow-suggestion-name">{t.name}</span>
                 <button

@@ -73,3 +73,27 @@
   font-size: var(--font-size-xs);
   color: var(--text-muted);
 }
+
+@media (max-width: 768px) {
+  .momentum-sparkline {
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .sparkline-legend {
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    font-size: 0.65rem;
+  }
+
+  .sparkline-chart {
+    height: 60px;
+  }
+
+  .sparkline-bar {
+    min-width: 3px;
+  }
+}

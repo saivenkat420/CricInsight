@@ -59,8 +59,8 @@
 }
 
 .pref-checkbox {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   accent-color: var(--color-primary);
   cursor: pointer;
   flex-shrink: 0;
@@ -124,8 +124,30 @@
   color: var(--color-success);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .data-actions {
     flex-direction: column;
+  }
+
+  .pref-toggle-row {
+    min-height: 48px;
+    padding: var(--space-md) 0;
+  }
+
+  .pref-checkbox {
+    width: 28px;
+    height: 28px;
+  }
+
+  .pref-card {
+    padding: var(--space-md);
+  }
+
+  .favorite-remove {
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

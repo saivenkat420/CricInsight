@@ -112,5 +112,26 @@
 @media (max-width: 768px) {
   .leagues-grid-large {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .league-card-large {
+    padding: var(--space-lg);
+  }
+
+  .league-card-large:hover {
+    transform: none;
+  }
+
+  .league-card-icon {
+    font-size: 3rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leagues-info {
+    padding: var(--space-md);
   }
 }
