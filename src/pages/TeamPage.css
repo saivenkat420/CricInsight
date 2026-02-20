@@ -506,39 +506,96 @@
   .team-hero {
     flex-direction: column;
     text-align: center;
+    padding: var(--space-lg);
   }
+
+  .team-hero-logo,
+  .team-hero-placeholder {
+    width: 80px;
+    height: 80px;
+  }
+
+  .team-hero-name {
+    font-size: var(--font-size-xl);
+  }
+
+  .team-hero-actions {
+    justify-content: center;
+  }
+
   .team-form {
     margin-top: var(--space-md);
   }
+
   .form-guide {
     justify-content: center;
   }
+
   .archive-stats-strip {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
   }
+
   .archive-stat {
-    min-width: calc(50% - var(--space-md));
+    padding: var(--space-md);
   }
+
+  .archive-stat-value {
+    font-size: var(--font-size-xl);
+  }
+
+  .team-tabs {
+    scrollbar-width: none;
+  }
+
+  .team-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .team-page .tab-btn {
+    min-height: 44px;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .archive-match-list {
+    grid-template-columns: 1fr;
+  }
+
   .h2h-summary-row {
     flex-direction: column;
   }
+
   .rivalry-tab .rivalry-selector {
     flex-direction: column;
     align-items: stretch;
   }
+
   .top-performers-section {
     grid-template-columns: 1fr;
   }
+
   .rivalry-comparison-card {
     flex-direction: column;
   }
+
   .rivalry-center {
     border-left: none;
     border-right: none;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
   }
+
   .season-selector-bar {
     position: static;
+    flex-wrap: wrap;
+  }
+
+  .squad-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .favorite-btn {
+    min-height: 44px;
   }
 }

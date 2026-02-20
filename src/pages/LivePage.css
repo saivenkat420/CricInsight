@@ -204,11 +204,33 @@
 @media (max-width: 768px) {
   .live-page .page-header {
     flex-direction: column;
+    gap: var(--space-sm);
   }
 
   .page-header-right {
     width: 100%;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .auto-refresh-toggle {
+    min-height: 44px;
+  }
+
+  .auto-refresh-toggle input {
+    width: 22px;
+    height: 22px;
+  }
+
+  .refresh-rate-select {
+    min-height: 44px;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+  }
+
+  .refresh-btn {
+    min-height: 44px;
+    flex: 1;
   }
 
   .live-page .matches-grid {
@@ -216,6 +238,15 @@
   }
 
   .live-overlays {
+    flex-direction: column;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .win-prob-bar {
+    min-width: unset;
+  }
+
+  .empty-state-actions {
     flex-direction: column;
   }
 }

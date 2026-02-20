@@ -127,72 +127,144 @@
   background: var(--bg-card-hover);
 }
 
-.menu-toggle {
+/* ── Bottom navigation (mobile only) ─────────────────── */
+
+.bottom-nav {
   display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 24px;
-  height: 18px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
 }
 
-.menu-toggle span {
-  width: 100%;
-  height: 2px;
-  background: var(--text-primary);
-  border-radius: 1px;
-  transition: all var(--transition-fast);
-}
-
-.menu-toggle.open span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(5px, -5px);
+.bottom-nav-backdrop {
+  display: none;
 }
 
 @media (max-width: 768px) {
   .header-nav {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: var(--bg-secondary);
-    flex-direction: column;
-    padding: var(--space-md);
-    border-bottom: 1px solid var(--border-color);
-    transform: translateY(-100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all var(--transition-normal);
-  }
-
-  .header-nav.open {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-link {
-    width: 100%;
-    justify-content: center;
-    padding: var(--space-md);
+    display: none;
   }
 
   .search-form {
     display: none;
   }
 
-  .menu-toggle {
+  .theme-toggle {
+    display: none;
+  }
+
+  .bottom-nav {
     display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-sticky);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: var(--space-xs) 0;
+    padding-bottom: calc(var(--space-xs) + env(safe-area-inset-bottom, 0px));
+    justify-content: space-around;
+    align-items: stretch;
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    flex: 1;
+    min-height: 52px;
+    padding: var(--space-xs) 0;
+    color: var(--text-tertiary);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: var(--font-weight-medium);
+    transition: color 0.15s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav-item.active {
+    color: var(--color-primary);
+  }
+
+  .bottom-nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    position: relative;
+  }
+
+  .bottom-nav-label {
+    letter-spacing: 0.2px;
+  }
+
+  .bottom-nav-live-dot {
+    position: absolute;
+    top: 0;
+    right: -2px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--live-indicator);
+    animation: pulse 1.5s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  .bottom-nav-more-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .bottom-nav-more-menu {
+    position: absolute;
+    bottom: calc(100% + var(--space-sm));
+    right: 0;
+    min-width: 180px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    padding: var(--space-xs) 0;
+    animation: fadeInUp 0.2s ease-out;
+    z-index: 10;
+  }
+
+  .more-menu-item {
+    display: block;
+    width: 100%;
+    padding: 14px var(--space-lg);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--text-secondary);
+    text-decoration: none;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.12s ease, color 0.12s ease;
+  }
+
+  .more-menu-item:hover,
+  .more-menu-item:active {
+    background: rgba(34, 197, 94, 0.08);
+    color: var(--text-primary);
+  }
+
+  .bottom-nav-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: calc(var(--z-sticky) - 1);
+    background: rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.15s ease-out;
   }
 }
 

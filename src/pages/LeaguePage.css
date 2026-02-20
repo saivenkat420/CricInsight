@@ -148,7 +148,47 @@
 }
 
 @media (max-width: 768px) {
+  .league-header {
+    flex-direction: column;
+  }
+
+  .season-selector {
+    width: 100%;
+  }
+
+  .season-select {
+    flex: 1;
+    min-height: 44px;
+  }
+
+  .league-tabs {
+    scrollbar-width: none;
+  }
+
+  .league-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    min-height: 44px;
+    padding: var(--space-sm) var(--space-md);
+  }
+
   .league-page .matches-grid {
     grid-template-columns: 1fr;
+  }
+
+  .teams-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .team-card {
+    padding: var(--space-md);
+  }
+
+  .team-card-logo {
+    width: 48px;
+    height: 48px;
   }
 }

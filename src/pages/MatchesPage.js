@@ -13,6 +13,7 @@ import {
   filterByTeam,
 } from '../utils/matchInsights'
 import {trackPageView, trackFilterChange, trackEvent} from '../utils/analytics'
+import {formatSeasonName} from '../utils/formatters'
 import MatchCard from '../components/MatchCard'
 import CustomSelect from '../components/CustomSelect'
 import {SkeletonMatchCard} from '../components/Skeleton'
@@ -90,6 +91,7 @@ function MatchesPage() {
   const [savedViews, setSavedViews] = useState(getSavedViews)
   const [showSaveModal, setShowSaveModal] = useState(false)
   const [viewName, setViewName] = useState('')
+  const [filtersExpanded, setFiltersExpanded] = useState(false)
 
   useEffect(() => {
     loadLeagues()
@@ -379,27 +381,62 @@ function MatchesPage() {
         </div>
       )}
 
-      <div className="filters-bar">
-        <div className="filters-row">
+      <div
+        className={`filters-bar ${
+          filtersExpanded ? 'filters-bar--expanded' : ''
+        }`}
+      >
+        <button
+          type="button"
+          className="filters-toggle-mobile"
+          onClick={() => setFiltersExpanded(prev => !prev)}
+          aria-expanded={filtersExpanded}
+        >
+          <span className="filters-toggle-text">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M2 4h12M4 8h8M6 12h4"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              />
+            </svg>
+            Filters
+            {hasActiveFilters && (
+              <span className="filters-active-badge">
+                {(filters.teamId ? 1 : 0) +
+                  (filters.dateFrom || filters.dateTo ? 1 : 0) +
+                  filters.tags.length +
+                  (filters.sort !== 'newest' ? 1 : 0)}
+              </span>
+            )}
+          </span>
+          <svg
+            className={`filters-toggle-chevron ${
+              filtersExpanded ? 'filters-toggle-chevron--up' : ''
+            }`}
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+            <path
+              d="M4 5.5L7 8.5L10 5.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+
+        <div className="filters-primary-row">
           <CustomSelect
             id="league-filter"
             label="League"
             value={filters.league}
             options={leagues.map(l => ({value: l.id, label: l.name}))}
             onChange={val => handleFilterChange('league', val)}
-          />
-
-          <CustomSelect
-            id="status-filter"
-            label="Status"
-            value={filters.status}
-            options={[
-              {value: 'all', label: 'All Matches'},
-              {value: 'live', label: 'Live'},
-              {value: 'upcoming', label: 'Upcoming'},
-              {value: 'completed', label: 'Completed'},
-            ]}
-            onChange={val => handleFilterChange('status', val)}
           />
 
           {seasons.length > 0 && (
@@ -409,93 +446,110 @@ function MatchesPage() {
               value={filters.seasonId}
               options={seasons.map(s => ({
                 value: s.id?.toString() || '',
-                label: s.name || s.league_id ? `Season ${s.id}` : String(s.id),
+                label: formatSeasonName(s),
               }))}
               onChange={val => handleFilterChange('seasonId', val)}
             />
           )}
-
-          {teams.length > 0 && (
-            <CustomSelect
-              id="team-filter"
-              label="Team"
-              value={filters.teamId}
-              options={[
-                {value: '', label: 'All Teams'},
-                ...teams.map(t => ({value: t.id, label: t.name})),
-              ]}
-              onChange={val => handleFilterChange('teamId', val)}
-            />
-          )}
-
-          <CustomSelect
-            id="sort-select"
-            label="Sort By"
-            value={filters.sort}
-            options={SORT_OPTIONS}
-            onChange={val => handleFilterChange('sort', val)}
-          />
         </div>
 
-        <div className="filters-row">
-          <div className="filter-group filter-group--date">
-            <label htmlFor="date-from" className="filter-date-label">
-              Date Range
-            </label>
-            <div className="date-range-inputs">
-              <input
-                id="date-from"
-                type="date"
-                value={filters.dateFrom}
-                onChange={e => handleFilterChange('dateFrom', e.target.value)}
-                className="filter-input"
+        <div className="filters-collapsible">
+          <div className="filters-row">
+            <CustomSelect
+              id="status-filter"
+              label="Status"
+              value={filters.status}
+              options={[
+                {value: 'all', label: 'All Matches'},
+                {value: 'live', label: 'Live'},
+                {value: 'upcoming', label: 'Upcoming'},
+                {value: 'completed', label: 'Completed'},
+              ]}
+              onChange={val => handleFilterChange('status', val)}
+            />
+
+            {teams.length > 0 && (
+              <CustomSelect
+                id="team-filter"
+                label="Team"
+                value={filters.teamId}
+                options={[
+                  {value: '', label: 'All Teams'},
+                  ...teams.map(t => ({value: t.id, label: t.name})),
+                ]}
+                onChange={val => handleFilterChange('teamId', val)}
               />
-              <span className="date-sep">to</span>
-              <input
-                type="date"
-                value={filters.dateTo}
-                onChange={e => handleFilterChange('dateTo', e.target.value)}
-                className="filter-input"
-              />
+            )}
+
+            <CustomSelect
+              id="sort-select"
+              label="Sort By"
+              value={filters.sort}
+              options={SORT_OPTIONS}
+              onChange={val => handleFilterChange('sort', val)}
+            />
+          </div>
+
+          <div className="filters-row">
+            <div className="filter-group filter-group--date">
+              <label htmlFor="date-from" className="filter-date-label">
+                Date Range
+              </label>
+              <div className="date-range-inputs">
+                <input
+                  id="date-from"
+                  type="date"
+                  value={filters.dateFrom}
+                  onChange={e => handleFilterChange('dateFrom', e.target.value)}
+                  className="filter-input"
+                />
+                <span className="date-sep">to</span>
+                <input
+                  type="date"
+                  value={filters.dateTo}
+                  onChange={e => handleFilterChange('dateTo', e.target.value)}
+                  className="filter-input"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="tag-filters">
-          {TAG_OPTIONS.map(tag => (
-            <button
-              key={tag.value}
-              type="button"
-              className={`tag-btn ${
-                filters.tags.includes(tag.value) ? 'active' : ''
-              }`}
-              onClick={() => toggleTag(tag.value)}
-              aria-pressed={filters.tags.includes(tag.value)}
-              aria-label={`Filter by ${tag.label}`}
-            >
-              {tag.label}
-              {filters.tags.includes(tag.value) && (
-                <span
-                  className="tag-remove"
-                  role="button"
-                  tabIndex={0}
-                  aria-label={`Remove ${tag.label} filter`}
-                  onClick={e => {
-                    e.stopPropagation()
-                    removeTag(tag.value)
-                  }}
-                  onKeyDown={e => {
-                    if (e.key === 'Enter' || e.key === ' ') {
+          <div className="tag-filters">
+            {TAG_OPTIONS.map(tag => (
+              <button
+                key={tag.value}
+                type="button"
+                className={`tag-btn ${
+                  filters.tags.includes(tag.value) ? 'active' : ''
+                }`}
+                onClick={() => toggleTag(tag.value)}
+                aria-pressed={filters.tags.includes(tag.value)}
+                aria-label={`Filter by ${tag.label}`}
+              >
+                {tag.label}
+                {filters.tags.includes(tag.value) && (
+                  <span
+                    className="tag-remove"
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Remove ${tag.label} filter`}
+                    onClick={e => {
                       e.stopPropagation()
                       removeTag(tag.value)
-                    }
-                  }}
-                >
-                  &times;
-                </span>
-              )}
-            </button>
-          ))}
+                    }}
+                    onKeyDown={e => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.stopPropagation()
+                        removeTag(tag.value)
+                      }
+                    }}
+                  >
+                    &times;
+                  </span>
+                )}
+              </button>
+            ))}
+          </div>
         </div>
 
         {hasActiveFilters && (

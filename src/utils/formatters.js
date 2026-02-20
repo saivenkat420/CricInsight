@@ -81,3 +81,33 @@ export function truncate(text, maxLength = 50) {
 export function pluralize(count, singular, plural) {
   return count === 1 ? singular : plural || `${singular}s`
 }
+
+export function formatSeasonName(season) {
+  if (!season) return 'Unknown Season'
+
+  if (
+    season.name &&
+    !/^\d+$/.test(season.name) &&
+    season.name !== String(season.league_id)
+  ) {
+    const name = season.name.trim()
+    const yearMatch = name.match(/\b(20\d{2})\b/)
+    if (yearMatch) return name
+    return name
+  }
+
+  const code = season.code || season.league_code || ''
+  const year = season.year || season.starting_at?.slice(0, 4) || ''
+
+  if (year) {
+    const y = parseInt(year, 10)
+    const nextYear = String(y + 1).slice(-2)
+    const label = code ? `${code} ${y}/${nextYear}` : `Season ${y}/${nextYear}`
+    return label
+  }
+
+  const id = season.id?.toString() || ''
+  if (code) return `${code} Season ${id}`
+
+  return `Season ${id}`
+}

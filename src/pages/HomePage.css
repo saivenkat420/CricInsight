@@ -257,9 +257,20 @@
 }
 
 @media (max-width: 768px) {
+  .home-page {
+    padding: 0 var(--space-sm);
+  }
+
   .hero-section {
     flex-direction: column;
     text-align: center;
+    padding: var(--space-lg) 0;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-subtitle {
+    font-size: var(--font-size-md);
   }
 
   .hero-actions {
@@ -272,8 +283,68 @@
     justify-content: center;
   }
 
+  .stat-card {
+    padding: var(--space-md);
+    min-width: 90px;
+  }
+
+  .stat-number {
+    font-size: var(--font-size-2xl);
+  }
+
   .matches-grid {
     grid-template-columns: 1fr;
+  }
+
+  .leagues-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .league-card {
+    padding: var(--space-md);
+  }
+
+  .league-card:hover {
+    transform: none;
+  }
+
+  .league-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+  }
+
+  .continue-section {
+    padding: var(--space-md);
+  }
+
+  .continue-cards {
+    scrollbar-width: none;
+  }
+
+  .continue-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .digest-cards {
+    scrollbar-width: none;
+  }
+
+  .digest-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .follow-suggestion-card {
+    padding: var(--space-md);
+  }
+
+  .follow-suggestion-btn {
+    min-height: 36px;
   }
 }
 

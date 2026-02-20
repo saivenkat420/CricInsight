@@ -280,6 +280,10 @@
     padding: 0 var(--space-sm);
   }
 
+  .main-content {
+    padding-bottom: calc(60px + env(safe-area-inset-bottom, 0px));
+  }
+
   .grid-2,
   .grid-3,
   .grid-4 {

@@ -198,12 +198,29 @@
   font-variant-numeric: tabular-nums;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .live-scoreboard {
     padding: var(--space-lg);
+    max-width: none;
+    border-radius: var(--radius-lg);
+  }
+
+  .scoreboard-close {
+    width: 44px;
+    height: 44px;
   }
 
   .main-score {
     font-size: var(--font-size-3xl);
+  }
+
+  .scoreboard-stats {
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+  }
+
+  .scoreboard-matchup {
+    flex-direction: column;
+    gap: var(--space-xs);
   }
 }

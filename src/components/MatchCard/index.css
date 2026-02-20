@@ -250,18 +250,118 @@
   line-height: 1.4;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+  .match-card {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+
+  .match-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .match-card:active {
+    transform: scale(0.99);
+    background: var(--bg-card-hover);
+  }
+
+  .match-card-header {
+    margin-bottom: var(--space-sm);
+  }
+
+  .match-card-body {
+    gap: 6px;
+  }
+
+  .team-row {
+    padding: 6px 0;
+  }
+
+  .team-info {
+    gap: var(--space-sm);
+    min-width: 0;
+    flex: 1;
+  }
+
   .team-name {
     font-size: var(--font-size-sm);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .team-score {
+    font-size: var(--font-size-md);
+    flex-shrink: 0;
+    font-variant-numeric: tabular-nums;
   }
 
   .team-logo {
     width: 28px;
     height: 28px;
+    flex-shrink: 0;
   }
 
   .match-card-footer {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
     flex-direction: column;
     align-items: flex-start;
+    gap: 4px;
+  }
+
+  .match-result {
+    font-size: var(--font-size-xs);
+    line-height: 1.4;
+  }
+
+  .match-mom {
+    font-size: 0.7rem;
+  }
+
+  .match-card-chips {
+    margin-top: var(--space-xs);
+  }
+
+  .highlight-chip {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+  }
+
+  .match-card--compact {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .match-card--compact .team-row {
+    padding: 4px 0;
+  }
+
+  .match-card--story {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 400px) {
+  .match-card {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .team-name {
+    font-size: var(--font-size-xs);
+  }
+
+  .team-score {
+    font-size: var(--font-size-sm);
+  }
+
+  .team-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .match-status {
+    font-size: 0.65rem;
+    padding: 2px 6px;
   }
 }

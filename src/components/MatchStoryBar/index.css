@@ -80,10 +80,11 @@
   top: 14px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .story-bar {
     flex-direction: column;
     gap: var(--space-md);
+    padding: var(--space-md);
   }
 
   .story-connector {

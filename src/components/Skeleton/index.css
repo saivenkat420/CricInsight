@@ -106,3 +106,18 @@
   align-items: center;
   gap: var(--space-sm);
 }
+
+@media (max-width: 768px) {
+  .skeleton-card,
+  .skeleton-match-card {
+    padding: var(--space-md);
+  }
+
+  .skeleton-table {
+    overflow-x: auto;
+  }
+
+  .skeleton-table-row {
+    padding: var(--space-sm);
+  }
+}

@@ -346,6 +346,16 @@ select {
   animation: fadeInUp 0.3s ease-out;
 }
 
+/* Mobile overrides */
+@media (max-width: 768px) {
+  :root {
+    --space-2xl: 1.5rem;
+    --space-xl: 1rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-2xl: 1.375rem;
+  }
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
