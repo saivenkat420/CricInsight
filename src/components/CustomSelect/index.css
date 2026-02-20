@@ -294,9 +294,7 @@
     background: rgba(34, 197, 94, 0.08);
   }
 
-  .custom-select--open
-    .custom-select__dropdown:not(.custom-select__sheet
-      .custom-select__dropdown) {
+  .custom-select--open .custom-select__dropdown:not(.custom-select__sheet .custom-select__dropdown) {
     display: none;
   }
 }
